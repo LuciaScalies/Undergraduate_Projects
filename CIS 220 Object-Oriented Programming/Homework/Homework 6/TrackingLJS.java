@@ -1,20 +1,20 @@
 /*
- TrackingDJS.java					Author: AMH, Dominic Joseph Scalies
- Driver class for the PackageDJS object
+ TrackingLJS.java					Author: AMH, Lucia Josephine Scalies
+ Driver class for the PackageLJS object
  */
 
 import java.text.DecimalFormat;
  
- public class TrackingDJS
+ public class TrackingLJS
  {
 	public static void main(String[] args)
 	{
 		//Creates a DecimalFormat object
 		DecimalFormat fmt = new DecimalFormat("0.##");
 		
-		//Creates a PackageDJS object representing a book being shipped from 
+		//Creates a PackageLJS object representing a book being shipped from 
 		//San Diego to Dayton and prints its status
-		PackageDJS book = new PackageDJS("San Diego", "Dayton", "Book");
+		PackageLJS book = new PackageLJS("San Diego", "Dayton", "Book");
 		System.out.println(book.toString());
 		
 		//package travels to Las Vegas ans prints its new state
@@ -57,9 +57,9 @@ import java.text.DecimalFormat;
 			book.atDest());
 		System.out.println();
 		
-		//Creates a PackageDJS object representing a a phone being shipped from
+		//Creates a PackageLJS object representing a a phone being shipped from
 		//Atlanta to Boise
-		PackageDJS phone = new PackageDJS("Atlanta", "Boise", "Phone");
+		PackageLJS phone = new PackageLJS("Atlanta", "Boise", "Phone");
 		
 		//Ships the phone to St. Louis, Kansas City, Denver, and Santa Fe and 
 		//prints its status

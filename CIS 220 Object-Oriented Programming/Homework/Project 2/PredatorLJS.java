@@ -1,7 +1,7 @@
 /*
- PredatorDJS.java					Author: AMH, Dominic Joseph Scalies
- Creates a PredatorDJS object. PredatorDJS objects are special cases of 
- AnimalDJS objects, and are able to be drawn in a graphics environment as 
+ PredatorLJS.java					Author: AMH, Lucia Josephine Scalies
+ Creates a PredatorLJS object. PredatorLJS objects are special cases of 
+ AnimalLJS objects, and are able to be drawn in a graphics environment as 
  circles, along with managing associated data about their circular 
  representation, manage their energy stored, determine their positions, and move 
  throughout their environment without exiting it
@@ -10,11 +10,11 @@
 import java.awt.*;
 import java.util.Random;
  
-public class PredatorDJS extends AnimalDJS
+public class PredatorLJS extends AnimalLJS
 {
-	//Constructor: Sets up PredatorDJS object using AnimalDJS's constructor and
-	//altering instance data to reflect PredatorDJS properties
-	public PredatorDJS(int upperX, int upperY, int maxX, int maxY, int pause)
+	//Constructor: Sets up PredatorLJS object using AnimalLJS's constructor and
+	//altering instance data to reflect PredatorLJS properties
+	public PredatorLJS(int upperX, int upperY, int maxX, int maxY, int pause)
 	{
 		super(upperX, upperY, maxX, maxY, pause);
 		color = Color.yellow;
@@ -22,7 +22,7 @@ public class PredatorDJS extends AnimalDJS
 	}
 	
 	/*
-	  Moves the PredatorDJS object. The predator might move both horizontally 
+	  Moves the PredatorLJS object. The predator might move both horizontally 
 	  and vertically, only horizontally or vertically, or not move at all. 
 	  There is a one in four chance the predator will move left; if it does not 
 	  move left, then with one in four chance it should move right. Independent 

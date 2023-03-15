@@ -27,7 +27,7 @@ public class SquareCalc
 		ask.nextLine();
 		System.out.print("Enter the unit of measure: ");
 		units = ask.nextLine();
-		
+		ask.close();
 		//Performs calculations
 		perimeter = 4 * side;
 		area = side * side;

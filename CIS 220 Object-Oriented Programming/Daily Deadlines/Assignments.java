@@ -1,5 +1,5 @@
 /* 
- Assignments.java		Author: AMH, DJS, CIS 220 01 Sp16
+ Assignments.java		Author: AMH, LJS, CIS 220 01 Sp16
  Creates an Assignment storing the possible points, points earned, and its topic
 */
 public class Assignments

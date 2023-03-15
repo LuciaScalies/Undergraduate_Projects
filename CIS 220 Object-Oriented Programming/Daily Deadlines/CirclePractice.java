@@ -45,6 +45,6 @@ public class CirclePractice extends JApplet
 		page.setColor(Color.magenta);
 		page.fillOval(XCENTER-(radius/(ratio*4)), YCENTER-(radius/(ratio*4)), 
 			((radius*2)/(ratio*4)), ((radius*2)/(ratio*4)));
-		
+		input.close();
 	}
 }

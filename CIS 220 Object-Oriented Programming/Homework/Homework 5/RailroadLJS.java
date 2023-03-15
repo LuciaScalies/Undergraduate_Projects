@@ -1,11 +1,11 @@
 /*
- RailroadDJS.java					Author: AMH, DJS
+ RailroadLJS.java					Author: AMH, LJS
  Implements a railroad yard with two trains passing through it
  */
 
 import java.text.NumberFormat;
 
-public class RailroadDJS 
+public class RailroadLJS 
 {
 	public static void main (String[] args) 
 	{
@@ -13,7 +13,7 @@ public class RailroadDJS
 		
 		// create an "early" train with id number 413 that has three
 		// passenger cars and five cargo cars
-		TrainDJS earlyTrain = new TrainDJS(413, 3, 5);
+		TrainLJS earlyTrain = new TrainLJS(413, 3, 5);
 		System.out.println(earlyTrain);	// print out status of early train
 		System.out.println();
 		
@@ -35,7 +35,7 @@ public class RailroadDJS
 		
 		// create a "late" train with id number 111 that has six passenger
 		// cars and one cargo car
-		TrainDJS lateTrain = new TrainDJS(111, 6, 1);
+		TrainLJS lateTrain = new TrainLJS(111, 6, 1);
 		lateTrain.addCargo(3);	// add three cargo cars to late train
 		lateTrain.removePassenger(2);	// remove two passenger cars from late train
 		lateTrain.removeCargo(1);	// remove one cargo car from late train

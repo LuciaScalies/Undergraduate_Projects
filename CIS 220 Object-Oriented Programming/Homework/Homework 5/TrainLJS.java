@@ -1,9 +1,9 @@
 /*
- TrainDJS.java					Author: AMH, DJS
- Creates a TrainDJS object and defines its methods 
+ TrainLJS.java					Author: AMH, LJS
+ Creates a TrainLJS object and defines its methods 
  */
 
-public class TrainDJS
+public class TrainLJS
 {
 	private int myID; //Train ID Number
 	private int myPassengerCars; //Number of Passenger Cars
@@ -16,7 +16,7 @@ public class TrainDJS
 		//passengers a car can carry
 		
 	//initializes instance data and constants
-	public TrainDJS(int id, int passengerCars, int cargoCars)
+	public TrainLJS(int id, int passengerCars, int cargoCars)
 	{
 		myID = id;
 		myPassengerCars = passengerCars;

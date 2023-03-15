@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.text.NumberFormat;
 
-public class ShortenerDJS
+public class ShortenerLJS
 {
 	public static void main(String[] args)
 	{
@@ -32,7 +32,7 @@ public class ShortenerDJS
 		//Prompts the user for the URL and stores the URL. 
 		System.out.println("Enter the URL you would like to shorten: ");
 		address = getURL.nextLine();
-		
+		getURL.close();
 		/*
 		Prints a message to the user to inform them that the program is running.
 		Obtains the baseURL by removing the http:// or https:// and prints the 

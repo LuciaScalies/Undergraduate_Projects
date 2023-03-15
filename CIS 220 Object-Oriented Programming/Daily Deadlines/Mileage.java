@@ -24,7 +24,7 @@ public class Mileage
 		
 		System.out.println("What is your destination?");
 		String destination = scan.nextLine();
-		
+		scan.close();
 		//do calculations
 		int feetPerMile = 5280;
 		double miles = numFeet/((double)feetPerMile);

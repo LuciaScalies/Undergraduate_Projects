@@ -1,5 +1,5 @@
 /*
-   Customer.java		Author: AMH, LO, DJS
+   Customer.java		Author: AMH, LO, LJS
    Describe an customer that may store a whole number of dollars in both a 
    checking and a savings Account. Calls methods from Account.java to handle
    additions and removals from the accounts

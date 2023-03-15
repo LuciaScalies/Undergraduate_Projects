@@ -1,9 +1,9 @@
-//Dominic Scalies
+//Lucia Scalies
 
 import java.util.Scanner;
 import java.util.Random;
 
-public class AddressDJS
+public class AddressLJS
 {
 	public static void main(String[] args)
 	{
@@ -16,6 +16,7 @@ public class AddressDJS
 		
 		System.out.println("Enter your e-mail address: ");
 		email = input.nextLine();
+		input.close();
 		lastPeriod = email.lastIndexOf('.');
 		atSymbol = email.indexOf('@');
 		afterAt = email.substring(atSymbol + 1);

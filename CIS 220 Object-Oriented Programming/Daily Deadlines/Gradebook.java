@@ -1,5 +1,5 @@
 /* 
- Gradebook.java		Author: AMH, DJS, CIS 220 01 Sp16
+ Gradebook.java		Author: AMH, LJS, CIS 220 01 Sp16
  Creates an Gradebook of Assignments storing the possible points, points earned,
  and topic of each Assignment
 */
@@ -32,7 +32,7 @@ public class Gradebook
 				scan.nextLine();
 			}
 		}
-		
+		scan.close();
 		for(int i = 0; i < grades.length; i++) //i is the current student
 		{
 			int total = 0;

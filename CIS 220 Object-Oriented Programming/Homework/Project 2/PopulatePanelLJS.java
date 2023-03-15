@@ -1,8 +1,8 @@
 /*
- PopulatePanelDJS.java					Author: AMH, Dominic Joseph Scalies
- Sets up the GUI environment, as well as the AnimalDJS and PredatorDJS objects
- used in PopulateDJS. Using Threads, the program simulates and manages the 
- motion and interaction of AnimalDJS and PredatorDJS objects. It contains a 
+ PopulatePanelLJS.java					Author: AMH, Lucia Josephine Scalies
+ Sets up the GUI environment, as well as the AnimalLJS and PredatorLJS objects
+ used in PopulateLJS. Using Threads, the program simulates and manages the 
+ motion and interaction of AnimalLJS and PredatorLJS objects. It contains a 
  pause feature allowing the user at any time to freeze the dynamic motion in 
  place, with the following press restarting the program as if no time has passed
  */
@@ -12,27 +12,27 @@ import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
  
-public class PopulatePanelDJS extends JPanel
+public class PopulatePanelLJS extends JPanel
 {
-	private AnimalDJS[] animals; //the AnimalDJS objects in the array
-	private double chance; //the chances of a PredatorDJS object being created
-	private int proximity; //the distance of pixels between AnimalDJS' centers 
+	private AnimalLJS[] animals; //the AnimalLJS objects in the array
+	private double chance; //the chances of a PredatorLJS object being created
+	private int proximity; //the distance of pixels between AnimalLJS' centers 
 						   //to be considered in proximity to one another
 	private Thread[] motion; // array of Threads used to control the behavior of
-							 // the AnimalDJS and PredatorDJS objects
+							 // the AnimalLJS and PredatorLJS objects
 	private JButton pause; //the Pause button
 	private int time; //the time between redraws of the screen in nanoseconds
 	private boolean canMove; //control boolean for pause button functionality
 	private final int WIN_SIZE; //size of the window
 	private final int PAUSE_BOTTOM; //bottom of the PAUSE JButton
 	
-	//Constructor: Sets up PopulatePanelDJS with the necessary components
-	public PopulatePanelDJS(int life, double hunters, int closeness)
+	//Constructor: Sets up PopulatePanelLJS with the necessary components
+	public PopulatePanelLJS(int life, double hunters, int closeness)
 	{
 		time = 300000000;
 		canMove = true;
-		// creates the AnimalDJS and Thread arrays
-		animals = new AnimalDJS[life];
+		// creates the AnimalLJS and Thread arrays
+		animals = new AnimalLJS[life];
 		motion = new Thread[life];
 		chance = hunters;
 		proximity = closeness;
@@ -58,13 +58,13 @@ public class PopulatePanelDJS extends JPanel
 		{
 			if(Math.random() <= chance) //determines if Animals are Predators
 			{
-				animals[i] = new PredatorDJS(gen.nextInt(361), 
+				animals[i] = new PredatorLJS(gen.nextInt(361), 
 									gen.nextInt(310)+PAUSE_BOTTOM, WIN_SIZE, 
 									WIN_SIZE, PAUSE_BOTTOM);
 			}
 			else
 			{
-				animals[i] = new AnimalDJS(gen.nextInt(361), 
+				animals[i] = new AnimalLJS(gen.nextInt(361), 
 									gen.nextInt(310)+PAUSE_BOTTOM, WIN_SIZE, 
 									WIN_SIZE, PAUSE_BOTTOM);
 			}
@@ -91,7 +91,7 @@ public class PopulatePanelDJS extends JPanel
 	//creates the MotionMonitor class to implement Runnable and run Threads
 	private class MotionMonitor implements Runnable
 	{
-		private int index; //the index of the associated AnimalDJS object
+		private int index; //the index of the associated AnimalLJS object
 		
 		public MotionMonitor(int i)
 		{
@@ -131,8 +131,8 @@ public class PopulatePanelDJS extends JPanel
 							proximity)
 						{
 							//checks for case of 2 predators interacting
-							if(animals[index] instanceof PredatorDJS && 
-								animals[closest] instanceof PredatorDJS)
+							if(animals[index] instanceof PredatorLJS && 
+								animals[closest] instanceof PredatorLJS)
 							{
 								animals[index].flee(animals[closest], .02);
 								animals[closest].flee(animals[index], .02);
@@ -141,10 +141,10 @@ public class PopulatePanelDJS extends JPanel
 							//checks for case of 2 non-predators
 							//true if and only if both Animals are Animals but
 							//not Predators
-							if((animals[index] instanceof AnimalDJS && 
-								!(animals[index] instanceof PredatorDJS)) && 
-								(animals[closest] instanceof AnimalDJS && 
-								!(animals[closest] instanceof PredatorDJS)))
+							if((animals[index] instanceof AnimalLJS && 
+								!(animals[index] instanceof PredatorLJS)) && 
+								(animals[closest] instanceof AnimalLJS && 
+								!(animals[closest] instanceof PredatorLJS)))
 							{
 								animals[index].addEnergy(.02);
 								animals[closest].addEnergy(.02);
@@ -152,12 +152,12 @@ public class PopulatePanelDJS extends JPanel
 							//checks for case of predator and non-predator
 							//true if and only if one but not both Animals are
 							//Predators
-							if((animals[index] instanceof PredatorDJS || 
-								animals[closest] instanceof PredatorDJS) && 
-							   !(animals[index] instanceof PredatorDJS && 
-							   animals[closest] instanceof PredatorDJS))
+							if((animals[index] instanceof PredatorLJS || 
+								animals[closest] instanceof PredatorLJS) && 
+							   !(animals[index] instanceof PredatorLJS && 
+							   animals[closest] instanceof PredatorLJS))
 							{
-								if(animals[index] instanceof PredatorDJS)
+								if(animals[index] instanceof PredatorLJS)
 								{
 									animals[index].addEnergy(.02);
 									animals[closest].flee(animals[index], .02);
@@ -184,25 +184,25 @@ public class PopulatePanelDJS extends JPanel
 					endtime = System.nanoTime(); //checks the current time
 				} while (endtime - starttime < time);
 				
-				if(last) //reached only if the AnimalDJS is the last one alive
+				if(last) //reached only if the AnimalLJS is the last one alive
 				{
 					if(animals[index].getEnergy() == 0)
 					{
-						int animalCount = 0; //number of AnimalDJS objects
-						int predatorCount = 0; //number of PredatorDJS 
+						int animalCount = 0; //number of AnimalLJS objects
+						int predatorCount = 0; //number of PredatorLJS 
 											//objects
-						int animalSteps = 0; //steps AnimalDJS objects have
+						int animalSteps = 0; //steps AnimalLJS objects have
 											 //taken
 						int maxAnimalSteps = 0; //the maximum number of steps
-												//taken by an AnimalDJS object
-						int predatorSteps = 0; //steps PredatorDJS objects have
+												//taken by an AnimalLJS object
+						int predatorSteps = 0; //steps PredatorLJS objects have
 											   //taken
 						int maxPredatorSteps = 0; //the maximum number of steps 
-												  //taken by a PredatorDJS 
+												  //taken by a PredatorLJS 
 												  //object
 						for(int i = 0; i < animals.length; i++)
 						{
-							if(animals[i] instanceof PredatorDJS)
+							if(animals[i] instanceof PredatorLJS)
 							{
 								predatorCount++;
 								predatorSteps += animals[i].getStepsTaken();

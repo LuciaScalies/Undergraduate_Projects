@@ -1,7 +1,7 @@
 /*
- PopulatePanelDJS.java					Author: AMH, Dominic Joseph Scalies
- Sets up the GUI environment, as well as the AnimalDJS and PredatorDJS objects
- used in PopulateDJS.
+ PopulatePanelLJS.java					Author: AMH, Lucia Josephineine Scalies
+ Sets up the GUI environment, as well as the AnimalLJS and PredatorLJS objects
+ used in PopulateLJS.
  */
 
 import java.awt.*;
@@ -9,17 +9,17 @@ import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
  
-public class PopulatePanelDJS extends JPanel
+public class PopulatePanelLJS extends JPanel
 {
-	private AnimalDJS first; //the first AnimalDJS object
-	private AnimalDJS second;  //the second AnimalDJS object
-	private AnimalDJS third; //the third AnimalDJS object
+	private AnimalLJS first; //the first AnimalLJS object
+	private AnimalLJS second;  //the second AnimalLJS object
+	private AnimalLJS third; //the third AnimalLJS object
 	private JButton step; //the Step button
 	private int count; //counts the steps in the program
 	private int timesShown; //how often the final Dialogue box has appeared
 	
-	//Constructor: Sets up PopulatePanelDJS with the necessary components
-	public PopulatePanelDJS()
+	//Constructor: Sets up PopulatePanelLJS with the necessary components
+	public PopulatePanelLJS()
 	{
 		count = 0;
 		timesShown = 0;
@@ -30,36 +30,36 @@ public class PopulatePanelDJS extends JPanel
 		//Creates a Random number generator
 		Random gen = new Random();
 		
-		//creates the AnimalDJS objects in random locations
+		//creates the AnimalLJS objects in random locations
 		if(gen.nextInt(3) != 2) //determines if Animal 1 is a Predator
 		{
-			first = new AnimalDJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
+			first = new AnimalLJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
 									200);
 		}
 		else
 		{
-			first = new PredatorDJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
+			first = new PredatorLJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
 									200);
 		}
 		
 		if(gen.nextInt(3) != 2) //determines if Animal 2 is a Predator
 		{
-			second = new AnimalDJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
+			second = new AnimalLJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
 									200);
 		}
 		else
 		{
-			second = new PredatorDJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
+			second = new PredatorLJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
 									200);
 		}
 		if(gen.nextInt(3) != 2) //determines if Animal 1 is a Predator
 		{
-			third = new AnimalDJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
+			third = new AnimalLJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
 									200);
 		}
 		else
 		{
-			third = new PredatorDJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
+			third = new PredatorLJS(gen.nextInt(161), gen.nextInt(110)+51, 200, 
 									200);
 		}
 		
@@ -129,8 +129,8 @@ public class PopulatePanelDJS extends JPanel
 				transfer = (number.nextInt(8) + 1)/100.0;
 				//determines if either of the Animal objects involved is a 
 				//Predator
-				if(first instanceof PredatorDJS || second instanceof 
-					PredatorDJS)
+				if(first instanceof PredatorLJS || second instanceof 
+					PredatorLJS)
 				{
 					transfer *= 1.5; //multiplies the energy by 1.5
 				}
@@ -155,7 +155,7 @@ public class PopulatePanelDJS extends JPanel
 				transfer = (number.nextInt(8) + 1)/100.0;
 				//determines if either of the Animal objects involved is a 
 				//Predator
-				if(first instanceof PredatorDJS || third instanceof PredatorDJS)
+				if(first instanceof PredatorLJS || third instanceof PredatorLJS)
 				{
 					transfer *= 1.5; //multiplies the energy by 1.5
 				}
@@ -180,8 +180,8 @@ public class PopulatePanelDJS extends JPanel
 				transfer = (number.nextInt(8) + 1)/100.0;
 				//determines if either of the Animal objects involved is a 
 				//Predator
-				if(second instanceof PredatorDJS || third instanceof 
-					PredatorDJS)
+				if(second instanceof PredatorLJS || third instanceof 
+					PredatorLJS)
 				{
 					transfer *= 1.5; //multiplies the energy by 1.5
 				}

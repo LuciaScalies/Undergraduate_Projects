@@ -7,7 +7,7 @@ Homework 1
 Displays some interesting facts about and draws a pansy
 */
 
-public class PansyDJS
+public class PansyLJS
 {
 	public static void main(String[] args) 
 	{

@@ -10,7 +10,7 @@ import javax.swing.JApplet;
 import java.util.Scanner;
 import java.awt.*;
 
-public class LadybugDJS extends JApplet
+public class LadybugLJS extends JApplet
 {	
 	//declares constants
 		private final int XMID = 250; //stores the midpoint of the x-axis
@@ -35,6 +35,7 @@ public class LadybugDJS extends JApplet
 		System.out.println("Enter the desired ladybug width: ");
 		bodyWidth = Math.max(Math.min(MAX, input.nextInt()), MIN);
 		input.nextLine();
+		input.close();
 		bodyRadius = bodyWidth / 2;
 		headRadius = bodyRadius / 2;
 		spotWidth = bodyWidth / 10;

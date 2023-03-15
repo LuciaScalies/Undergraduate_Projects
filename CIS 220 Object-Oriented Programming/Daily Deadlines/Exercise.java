@@ -28,5 +28,6 @@ public class Exercise
 				System.out.println("Go swimming.");
 			}
 		}
+		scan.close();
 	}
 }

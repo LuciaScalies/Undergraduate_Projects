@@ -22,6 +22,7 @@ public class PhonebookReader
 		String username = ""; //stores user input
 		System.out.println("Enter a name:");
 		username = input.nextLine(); //name to be searched
+		input.close();
 		boolean found = false; //true if username was found
 		boolean passed = false; //true if the file has passed the possible 
 								//location for the name

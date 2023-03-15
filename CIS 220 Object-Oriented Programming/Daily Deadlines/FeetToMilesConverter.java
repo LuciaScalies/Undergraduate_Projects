@@ -25,7 +25,7 @@ public class FeetToMilesConverter
 		//Calculates the conversion
 		miles = (double)feet/FEET_PER_MILE;
 		remFeet = feet%FEET_PER_MILE;
-		
+		scan.close();
 		//Prints user's value for feet and the conversions
 		System.out.println(feet + " feet is " + miles + " miles.");
 		System.out.println(feet + " is also " + (int)miles + " and " +

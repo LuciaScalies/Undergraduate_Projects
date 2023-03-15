@@ -9,7 +9,7 @@ calculate various values related to the user's progress on the essay
 
 import java.util.Scanner;
 
-public class EssayDJS
+public class EssayLJS
 {
 	public static void main(String[] args)
 	{
@@ -61,7 +61,7 @@ public class EssayDJS
 		input.nextLine();
 		double wordsPerHour = currentWords/hours;
 		double hoursLeft = remainingWords/wordsPerHour;
-		
+		input.close();
 		//Outputs the result of the above calculations
 		System.out.println("You are writing at a pace of " + wordsPerHour
 			+ " words per hour.");

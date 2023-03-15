@@ -1,6 +1,6 @@
 /*
- PopulateDJS.java					Author: AMH, Dominic Joseph Scalies
- Creates and displays the PopulateDJS GUI environment
+ PopulateLJS.java					Author: AMH, Lucia Josephine Scalies
+ Creates and displays the PopulateLJS GUI environment
  */
 
 //imports Scanner class
@@ -8,7 +8,7 @@ import java.util.Scanner;
 //imports GUI setup components
  import javax.swing.JFrame;
  
-public class PopulateDJS
+public class PopulateLJS
 {
 	//runs the GUI
 	public static void main (String[] args)
@@ -36,7 +36,7 @@ public class PopulateDJS
 				}
 				else //Error 2
 				{
-					System.out.println("PopulateDJS Error 2: Negative or Zero "
+					System.out.println("PopulateLJS Error 2: Negative or Zero "
 									  + "Value entered for argument 1. Run ");
 					System.out.println("program with a positive first integer " 
 									  + "argument.");
@@ -45,13 +45,14 @@ public class PopulateDJS
 			}
 			else //Error 1
 			{
-				System.out.println("PopulateDJS Error 1: The first argument " +
+				System.out.println("PopulateLJS Error 1: The first argument " +
 								   "either was not entered or was not an ");
 				System.out.println("integer. Run program with a positive first " 
 								  + "integer argument.");
 				System.out.println();
 			}
-			
+			scan1.close();
+
 			if(scan2.hasNextDouble()) //checks if args[1] contains a double
 			{
 				hunters = scan2.nextDouble();
@@ -62,7 +63,7 @@ public class PopulateDJS
 				}
 				else //Error 6
 				{
-					System.out.println("PopulateDJS Error 6: Negative Value " +
+					System.out.println("PopulateLJS Error 6: Negative Value " +
 									   "entered for argument 2. Run program " +
 									   "with ");
 					System.out.println("a positive or zero rational second " +
@@ -72,12 +73,14 @@ public class PopulateDJS
 			}
 			else //Error 5
 			{
-				System.out.println("PopulateDJS Error 5: The second argument " +
+				System.out.println("PopulateLJS Error 5: The second argument " +
 								   "either was not entered or was not a ");
 				System.out.println("rational number. Run program with a " + 
 								   "positive or zero rational argument.");
 				System.out.println();
 			}
+
+			scan2.close();
 			
 			if(scan3.hasNextInt()) //checks is args[2] is an int
 			{
@@ -89,7 +92,7 @@ public class PopulateDJS
 				}
 				else //Error 8
 				{
-					System.out.println("PopulateDJS Error 8: Negative or Zero "
+					System.out.println("PopulateLJS Error 8: Negative or Zero "
 									  + "Value entered for argument 3. Run ");
 					System.out.println("program with a positive integer third " 
 									  + "argument.");
@@ -98,25 +101,26 @@ public class PopulateDJS
 			}
 			else //Error 7
 			{
-				System.out.println("PopulateDJS Error 7: The third argument " +
+				System.out.println("PopulateLJS Error 7: The third argument " +
 								   "either was not entered or was not an ");
 				System.out.println("integer. Run program with a positive third " 
 								  + "integer argument.");
 				System.out.println();
 			}
+			scan3.close();
 		}
 		else
 		{
 			if(args.length > 3) //Error 3
 			{
-				System.out.println("PopulateDJS Error 3: Excessive quantity of "
+				System.out.println("PopulateLJS Error 3: Excessive quantity of "
 								   + "arguments supplied. Please ");
 				System.out.println("enter only 3 arguments.");
 				System.out.println();
 			}
 			else //Error 4
 			{
-				System.out.println("PopulateDJS Error 4: Insufficient quantity "
+				System.out.println("PopulateLJS Error 4: Insufficient quantity "
 									+ "of arguments supplied. Please ");
 				System.out.println("enter 3 arguments.");
 				System.out.println();
@@ -130,8 +134,8 @@ public class PopulateDJS
 			//exits program when closed
 			frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
 			
-			//creates the PopulatePanelDJS via its constructor
-			PopulatePanelDJS panel = new PopulatePanelDJS(life, hunters, 
+			//creates the PopulatePanelLJS via its constructor
+			PopulatePanelLJS panel = new PopulatePanelLJS(life, hunters, 
 														 closeness);
 			frame.getContentPane().add(panel);
 			frame.pack();
@@ -139,7 +143,7 @@ public class PopulateDJS
 		}
 		else //final error message; provides example input for user
 		{
-			System.out.println("Example input: java PopulateDJS 20 0.25 40");
+			System.out.println("Example input: java PopulateLJS 20 0.25 40");
 		}
 	}
 }
